@@ -18,10 +18,17 @@ select, input {
     border: 1px solid rgba(255, 255, 255, 0.5); /* Light white border */
     border-radius: 8px;
     font-size: 16px;
-    background: rgba(255, 255, 255, 0.2); /* Light transparency */
+    background: rgba(0, 0, 0, 0.5); /* Darker background for contrast */
     color: white; /* White text */
     outline: none;
 }
+
+/* Ensure selected option text is visible */
+select option {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
 
 /* Placeholder Styling */
 input::placeholder {
