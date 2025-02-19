@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: url('wildfire-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.918);
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+
+/* Input Fields - Transparent with White Text */
+select, input {
+    width: 85%;
+    padding: 12px;
+    margin: 6px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light white border */
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2); /* Light transparency */
+    color: white; /* White text */
+    outline: none;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* On Focus - Enhance Visibility */
+input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+}
+
+/* Form Container - Keep the Theme */
+.container {
+    width: 50%;
+    margin: auto;
+    background: rgba(255, 86, 34, 0.1); /* Fire-Orange Transparency */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(255, 69, 0, 0.8);
+    border-radius: 12px;
+    margin-top: 50px;
+    backdrop-filter: blur(5px);
+}
+
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+select, input {
+    width: 85%;
+    padding: 12px;
+    margin: 6px 0;
+    border: 1px solid rgba(221, 221, 221, 0.41);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Button Styling */
+button {
+    background-color: #ff5722; /* Fire-themed orange */
+    color: rgba(255, 255, 255, 0.884);
+    padding: 12px 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+}
+
+/* Result Text */
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: yellow;
+}

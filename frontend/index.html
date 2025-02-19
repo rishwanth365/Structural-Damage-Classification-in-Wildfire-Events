@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structural Damage Classification</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon.png" type="image/png"> <!-- Favicon -->
+</head>
+<body>
+    <div class="container">
+        <h2>Structural Damage Classification in Wildfire Events</h2>
+        <form id="prediction-form">
+            
+            <label for="CAL_FIRE_Unit">CAL FIRE Unit:</label>
+            <select id="CAL_FIRE_Unit" name="CAL_FIRE_Unit"></select>
+
+            <label for="Structure_Type">Structure Type:</label>
+            <select id="Structure_Type" name="Structure_Type"></select>
+
+            <label for="Roof_Construction">Roof Construction:</label>
+            <select id="Roof_Construction" name="Roof_Construction"></select>
+
+            <label for="Vent_Screen">Vent Screen:</label>
+            <select id="Vent_Screen" name="Vent_Screen"></select>
+
+            <label for="Exterior_Siding">Exterior Siding:</label>
+            <select id="Exterior_Siding" name="Exterior_Siding"></select>
+
+            <label for="Window_Pane">Window Pane:</label>
+            <select id="Window_Pane" name="Window_Pane"></select>
+
+            <label for="incident_date">Incident Date:</label>
+            <input type="date" id="incident_date" name="incident_date" min="2015-01-01" max="2024-12-31" required>
+
+            <label for="Latitude">Latitude:</label>
+            <input type="number" id="Latitude" name="Latitude" step="any" required>
+
+            <label for="Longitude">Longitude:</label>
+            <input type="number" id="Longitude" name="Longitude" step="any" required>
+
+            <button type="submit">Predict Damage</button>
+        </form>
+
+        <h3 id="result"></h3>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
