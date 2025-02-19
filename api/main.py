@@ -73,8 +73,6 @@ def predict_damage(data: FireIncident):
     # Make prediction
     prediction = model.predict(df_input)
 
-    print(df_input.head())
-
     # Decode damage category
     predicted_damage = ordinal_encoder.inverse_transform([[prediction[0]]])[0][0]
 
