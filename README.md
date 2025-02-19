@@ -3,7 +3,8 @@
 A data-driven project aimed at predicting the extent of structural damage in wildfire events based on various building and environmental factors. The project utilizes machine learning techniques for classification and provides a user-friendly web interface for predictions.
 
 ---
-![image](https://github.com/user-attachments/assets/a717f0a0-3a48-4eaf-bcfb-2d00598790aa)
+![image](https://github.com/user-attachments/assets/711d43bf-31d2-4ca0-a2a2-bfb34e795e63)
+
 ---
 
 ## **Steps Followed in the Project**
@@ -22,9 +23,9 @@ The dataset includes the following features:
 - `Vent Screen`: Mesh size of vent screens (e.g., <= 1/8", none, etc.).
 - `Exterior Siding`: Type of exterior siding material (e.g., wood, stucco, etc.).
 - `Window Pane`: Type of window glazing (e.g., single-pane, double-pane, etc.).
-- `Incident Date`: Date of the wildfire event.
+- `Incident Start Date`: Date of the wildfire event.
 - `Latitude & Longitude`: Geographic coordinates of the structure.
-- `Damage Level`: Target variable indicating the extent of structural damage.
+- `Damage`: Target variable indicating the extent of structural damage.
 
 **Key Observations**:
 - Certain materials and construction types exhibit higher vulnerability to wildfires.
@@ -44,9 +45,10 @@ The dataset includes the following features:
 ---
 
 ### **4. Feature Engineering**
-1. **Label Encoding**: Encoded categorical variables such as `Structure Type`, `Roof Construction`, etc.
-2. **Scaling**: Standardized numerical features (`Latitude`, `Longitude`).
-3. **Data Splitting**: Split the dataset into training and testing sets for model evaluation.
+1. **Handeled Incident Start Date**: As the Machine Learning couldn't understand date foramt so created new columns seperately for Incident Start Year, Month & Day.
+2. **Categorical Encoding**: Encoded categorical variables such as `CAL FIRE Unit`, `Structure Type`, `Roof Construction`, `Vent Screen`, `Exterior Siding`, `Window Pane` & `Damage`.
+3. **Scaling**: Standardized numerical features (`Latitude`, `Longitude`).
+4. **Data Splitting**: Split the dataset into training and testing sets for model evaluation.
 
 ---
 
@@ -57,7 +59,6 @@ Implemented the following classification models:
 3. **Random Forest Classifier**
 4. **Gradient Boosting Classifier**
 5. **XGBoost Classifier**
-6. **Neural Network (MLPClassifier)**
 
 ---
 
@@ -73,12 +74,11 @@ Implemented the following classification models:
 ### **7. Results Visualization**
 1. **Confusion Matrix**: To understand misclassifications.
 2. **Feature Importance**: Identified key predictors of structural damage.
-3. **ROC Curve**: Evaluated model performance for classification tasks.
 
 ---
 
 ### **8. Deployment**
-The best-performing model was saved and deployed as a web application:
+The best-performing model decision tree classifier model was saved and deployed as a web application:
 - **Model Saved**:
    ```python
    import joblib
@@ -94,17 +94,23 @@ The best-performing model was saved and deployed as a web application:
 ```plaintext
 project/
 ├── api/
-│   ├── main.py                           # FastAPI backend for handling predictions
+│   ├── main.py                                   # FastAPI backend for handling predictions
 ├── data/
-│   ├── wildfire_damage_data.csv          # Dataset used for model training
+│   ├── california-wildfire-dataset.csv           # Dataset used for model training
 ├── frontend/
-│   ├── index.html                        # Web interface for the application
-│   ├── index.css                         # Styling for the web page
-│   ├── index.js                          # Form handling and API interaction
+│   ├── index.html                                # Web interface for the application
+│   ├── styles.css                                # Styling for the web page
+│   ├── script.js                                 # Form handling and API interaction
 ├── model/
-│   ├── structural_damage_classification.ipynb  # Notebook for EDA and model training
-│   ├── wildfire_damage_model.pkl        # Saved machine learning model
-├── README.md                             # Project documentation
+│   ├── Structural Damage Classification.ipynb    # Notebook for EDA and model training
+│   ├── decision_tree_model.pkl                   # Saved machine learning model
+    ├── encoded_data_columns.pkl
+    ├── label_encoder.pkl
+    ├── model_scaler.pkl                 
+    ├── one_hot_encoders.pkl
+    ├── ordinal_encoder.pkl
+    ├── scaler.pkl
+├── README.md                                     # Project documentation
 ```
 
 ---
